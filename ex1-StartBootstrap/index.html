@@ -26,7 +26,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;My Cart <span class="badge">4</span></a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign In</a></li>
+					<li><a href="#" id="logonLink"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign In</a></li>
 				</ul>
 				<form class="navbar-form navbar-right visible-md-inline visible-lg-inline">
 					<div class="form-group" style="margin-top: 4px">
@@ -37,6 +37,7 @@
 			</div>
 		</div>
 	</nav>	
+
 	<div class="container">
 		<div class="alert alert-info">You last visited us on <a href="#" class="alert-link">Oct. 1st</a></div>
 		<div class="page-header">
@@ -64,11 +65,90 @@
 		</ul>
 
 	</div>
+
 	<div id="footer">
 		<div class="container">
 			<div class="text-muted pull-left"><a href="http://www.packtpub.com" target="_blank">Bootstrap&reg; Sample App</a></div>
 			<div class="text-muted pull-right">&copy; <a href="http://about.me/snig" target="_blank">Snig Bhaumik</a> 2015</div>
 		</div>
 	</div>	
+
+	<!-- Sign In Dialog Box -->
+	<div class="modal fade" id="logonBox" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+					<h4 class="modal-title">Sign In</h4>
+				</div>
+				<div class="modal-body">
+					<div>
+						<ul class="nav nav-pills">
+							<li class="active"><a href="#signin" data-toggle="tab" data-caption="Sign In">Sign In</a></li>
+							<li><a href="#signup" data-toggle="tab" data-caption="Sign Up">Sign Up</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="signin">
+								<form style="padding-top: 5px">
+									<div class="form-group">
+										<input type="text" class="form-control" id="userName" placeholder="User Name" name="">
+									</div>
+									<div class="form-group">
+										<input type="passowrd" class="form-control" id="password" placeholder="Password" name="">
+									</div>
+								</form>								
+							</div>
+							<div class="tab-pane" id="signup">
+								<form style="padding-top: 5px">
+									<div class="form-group">
+										<input type="text" class="form-control" id="yourName" placeholder="Your Full Name" name="">
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="yourUserName" placeholder="Desired User Name" name="">
+									</div>			
+									<div class="form-group">
+										<input type="text" class="form-control" id="yourEmail" placeholder="Your Email Id" name="">
+									</div>															
+									<div class="form-group">
+										<input type="passowrd" class="form-control" id="yourPwd" placeholder="Password" name="">
+									</div>
+									<div class="form-group">
+										<input type="passowrd" class="form-control" id="confirmPwd" placeholder="Confirmed Password" name="">
+									</div>				
+									<button type="button" class="btn btn-success btn-block" id="doLogon">Sign Up</button>					
+								</form>								
+							</div>							
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+					<!-- <button type="button" class="btn btn-primary" id="doLogon">Sign In</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	$('#logonLink').on('click', function (e) {
+		$('#logonBox').modal({
+			keyboard: false,
+			backdrop: 'static'
+		});
+	});
+	$('#doLogon').on('click', function (e) {
+		alert('Thank you for Signing In');
+		$('#logonBox').modal('hide');
+	});
+	$('#logonBox').on('hidden.bs.modal', function (e) {
+		alert('You have cancelled the Sign In operation');
+	});
+
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		var data = $(e.target).data('caption');
+		var modal = $('#logonBox');
+		modal.find('.modal-title').text(data);
+	})
+</script>
 </body>
 </html>
