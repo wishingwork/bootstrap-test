@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Browse Products</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1><span class="glyphicon glyphicon-home"></span>&nbsp;Browse Products and Categories</h1>			
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<div class="panel-group" id="catList">
+					<div class="panel panel-primary" id="cat1Head">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#cat1" data-toggle="collapse" data-parent="#catList"><span class="glyphicon glyphicon-user"></span>&nbsp;Fashion and Clothing for Him</a>
+							</h4>
+						</div>
+						<div id="cat1" class="panel-collapse collapse in">
+							<ul class="list-group">
+								<li class="list-group-item">Shirts</li>
+								<li class="list-group-item">Tees</li>
+								<li class="list-group-item">Trousers</li>
+								<li class="list-group-item">Footwear</li>
+								<li class="list-group-item">Accessories</li>
+							</ul>
+						</div>			
+					</div>
+					<div class="panel panel-default" id="cat2Head">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#cat2" data-toggle="collapse" data-parent="#catList"><span class="glyphicon glyphicon-heart"></span>&nbsp;Fashion and Clothing for Her</a>
+							</h4>
+						</div>
+						<div id="cat2" class="panel-collapse collapse">
+							<ul class="list-group">
+								<li class="list-group-item">Shirts</li>
+								<li class="list-group-item">Tees</li>
+								<li class="list-group-item">Skirts</li>
+								<li class="list-group-item">Footwear</li>
+								<li class="list-group-item">Jewellery</li>
+								<li class="list-group-item">Accessories</li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-default" id="cat3Head">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a href="#cat3" data-toggle="collapse" data-parent="#catList"><span class="glyphicon glyphicon-phone"></span>&nbsp;Electronics</a>
+							</h4>
+						</div>
+						<div id="cat3" class="panel-collapse collapse">
+							<ul class="list-group">
+								<li class="list-group-item">Mobiles</li>
+								<li class="list-group-item">Tablets</li>
+								<li class="list-group-item">LEDs and LCDs</li>
+								<li class="list-group-item">Laptops</li>
+								<li class="list-group-item">Desktops</li>
+								<li class="list-group-item">Cameras</li>
+								<li class="list-group-item">Appliances</li>
+								<li class="list-group-item">Health Care</li>
+								<li class="list-group-item">Accessories</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+				<div class="panel panel-warning">
+					<div class="panel-heading">Fashion shop for Her</div>
+					<div class="panel-body">...</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>	
+<script>
+	$('#cat1').on('show.bs.collapse', function () {
+		$('#cat1Head').removeClass('panel-default').addClass('panel-primary');
+		$('#cat2Head').removeClass('panel-success').addClass('panel-default');
+		$('#cat3Head').removeClass('panel-warning').addClass('panel-default');		
+	});
+	$('#cat2').on('show.bs.collapse', function () {
+		$('#cat1Head').removeClass('panel-primary').addClass('panel-default');
+		$('#cat2Head').removeClass('panel-default').addClass('panel-success');
+		$('#cat3Head').removeClass('panel-warning').addClass('panel-default');		
+	});
+	$('#cat3').on('show.bs.collapse', function () {
+		$('#cat1Head').removeClass('panel-primary').addClass('panel-default');
+		$('#cat2Head').removeClass('panel-success').addClass('panel-default');
+		$('#cat3Head').removeClass('panel-default').addClass('panel-warning');		
+	});		
+</script>	
+</body>
+</html>
