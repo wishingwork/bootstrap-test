@@ -1,0 +1,17 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+/* line 4, ../sass/print.scss */
+#main p {
+  color: blue;
+  width: 97%;
+}
+/* line 7, ../sass/print.scss */
+#main p .redbox {
+  background-color: yellow;
+  color: black;
+}
+/* line 12, ../sass/print.scss */
+#main p div {
+  font-size: 14px;
+}
